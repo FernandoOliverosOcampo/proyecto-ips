@@ -1,35 +1,31 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ViewChild, ElementRef, AfterViewInit } from '@angular/core';
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css']
+  styleUrls: ['./login.component.scss']
 })
-export class LoginComponent implements OnInit {
-  constructor() { }
+export class LoginComponent implements AfterViewInit {
+  @ViewChild('signInBtn') signInBtn!: ElementRef;
+  @ViewChild('signUpBtn') signUpBtn!: ElementRef;
+  @ViewChild('signInBtn2') signInBtn2!: ElementRef;
+  @ViewChild('signUpBtn2') signUpBtn2!: ElementRef;
 
-  ngOnInit(): void {
-    // Coloca aquí tu código JavaScript
-    const sign_in_btn = document.querySelector("#sign-in-btn");
-    const sign_up_btn = document.querySelector("#sign-up-btn");
-    const container = document.querySelector(".container");
-    const sign_in_btn2 = document.querySelector("#sign-in-btn2");
-    const sign_up_btn2 = document.querySelector("#sign-up-btn2");
-
-    sign_up_btn.addEventListener("click", () => {
-      container.classList.add("sign-up-mode");
+  ngAfterViewInit() {
+    this.signUpBtn?.nativeElement.addEventListener('click', () => {
+      document.querySelector('.container')?.classList.add('sign-up-mode');
     });
-
-    sign_in_btn.addEventListener("click", () => {
-      container.classList.remove("sign-up-mode");
+    
+    this.signInBtn?.nativeElement.addEventListener('click', () => {
+      document.querySelector('.container')?.classList.remove('sign-up-mode');
     });
-
-    sign_up_btn2.addEventListener("click", () => {
-      container.classList.add("sign-up-mode2");
+    
+    this.signUpBtn2?.nativeElement.addEventListener('click', () => {
+      document.querySelector('.container')?.classList.add('sign-up-mode2');
     });
-
-    sign_in_btn2.addEventListener("click", () => {
-      container.classList.remove("sign-up-mode2");
+    
+    this.signInBtn2?.nativeElement.addEventListener('click', () => {
+      document.querySelector('.container')?.classList.remove('sign-up-mode2');
     });
   }
 }
