@@ -1,31 +1,43 @@
-import { Component, ViewChild, ElementRef, AfterViewInit } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.scss']
 })
-export class LoginComponent implements AfterViewInit {
-  @ViewChild('signInBtn') signInBtn!: ElementRef;
-  @ViewChild('signUpBtn') signUpBtn!: ElementRef;
-  @ViewChild('signInBtn2') signInBtn2!: ElementRef;
-  @ViewChild('signUpBtn2') signUpBtn2!: ElementRef;
+export class LoginComponent {
+  loginDialogVisible = false;
+  loginUsername = '';
+  loginPassword = '';
 
-  ngAfterViewInit() {
-    this.signUpBtn?.nativeElement.addEventListener('click', () => {
-      document.querySelector('.container')?.classList.add('sign-up-mode');
-    });
-    
-    this.signInBtn?.nativeElement.addEventListener('click', () => {
-      document.querySelector('.container')?.classList.remove('sign-up-mode');
-    });
-    
-    this.signUpBtn2?.nativeElement.addEventListener('click', () => {
-      document.querySelector('.container')?.classList.add('sign-up-mode2');
-    });
-    
-    this.signInBtn2?.nativeElement.addEventListener('click', () => {
-      document.querySelector('.container')?.classList.remove('sign-up-mode2');
-    });
+  registerDialogVisible = false;
+  newUsername = '';
+  email = '';
+  newPassword = '';
+
+  showLoginDialog() {
+    this.loginDialogVisible = true;
+  }
+
+  closeLoginDialog() {
+    this.loginDialogVisible = false;
+  }
+
+  login() {
+    // Aquí puedes agregar la lógica para iniciar sesión
+    this.loginDialogVisible = false;
+  }
+
+  showRegisterDialog() {
+    this.registerDialogVisible = true;
+  }
+
+  closeRegisterDialog() {
+    this.registerDialogVisible = false;
+  }
+
+  register() {
+    // Aquí puedes agregar la lógica para registrar al usuario
+    this.registerDialogVisible = false;
   }
 }
