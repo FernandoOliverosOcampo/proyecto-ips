@@ -1,56 +1,28 @@
 <div class="main-container">
+    <header>
+      <h1>Bienvenido a Control de Medicamentos</h1>
+      <p>La mejor plataforma para gestionar tus medicamentos</p>
+    </header>
+  
     <div class="main-content">
-
         <div class="main-image">
             <img src="../../../assets/img/bienvenida.png" alt="Imagen de bienvenida">
         </div>
-
+  
         <div class="main-text">
-            <div class="title"> 
-                <h1>Control de medicamentos</h1>
-            </div>
+            <h2>Inicia sesión o regístrate para continuar</h2>
+            <div class="main-buttons">
+                <button pButton type="button" label="Iniciar Sesión" (click)="modalLogin.showLoginDialog()"></button>
+                <button pButton type="button" label="Registrarse" (click)="modalRegister.showRegisterDialog()"></button>
+            </div>        
         </div>
-        <div class="main-buttons">
-            <button pButton type="button" label="Iniciar Sesión" (click)="showLoginDialog()"></button>
-            <button pButton type="button" label="Registrarse" (click)="showRegisterDialog()"></button>
-            
-            <p-dialog header="Iniciar Sesión" [(visible)]="loginDialogVisible" [modal]="true" [style]="{ width: '50vw' }" [draggable]="false" [resizable]="false">
-              <div class="p-fluid">
-                <div class="p-field">
-                  <label for="username">Usuario</label>
-                  <input id="username" type="text" pInputText [(ngModel)]="loginUsername" required>
-                </div>
-                <div class="p-field">
-                  <label for="password">Contraseña</label>
-                  <input id="password" type="password" pPassword [(ngModel)]="loginPassword" required>
-                </div>
-              </div>
-              <div class="p-dialog-footer">
-                <button pButton type="button" label="Cancelar" (click)="closeLoginDialog()"></button>
-                <button pButton type="button" label="Iniciar sesión" (click)="login()"></button>
-              </div>
-            </p-dialog>
-            
-            <p-dialog header="Registrarse" [(visible)]="registerDialogVisible" [modal]="true" [style]="{ width: '50vw' }" [draggable]="false" [resizable]="false">
-              <div class="p-fluid">
-                <div class="p-field">
-                  <label for="newUsername">Usuario</label>
-                  <input id="newUsername" type="text" pInputText [(ngModel)]="newUsername" required>
-                </div>
-                <div class="p-field">
-                  <label for="email">Correo electrónico</label>
-                  <input id="email" type="email" pInputText [(ngModel)]="email" required>
-                </div>
-                <div class="p-field">
-                  <label for="newPassword">Contraseña</label>
-                  <input id="newPassword" type="password" pPassword [(ngModel)]="newPassword" required>
-                </div>
-              </div>
-              <div class="p-dialog-footer">
-                <button pButton type="button" label="Cancelar" (click)="closeRegisterDialog()"></button>
-                <button pButton type="button" label="Registrarse" (click)="register()"></button>
-              </div>
-            </p-dialog>
-        </div>        
     </div>
-</div>
+  
+    <footer>
+      <p>© 2023 Control de Medicamentos. Todos los derechos reservados.</p>
+    </footer>
+  
+    <app-modal-login #modalLogin></app-modal-login>
+    <app-modal-register #modalRegister></app-modal-register>
+  </div>
+  

@@ -1,0 +1,77 @@
+.modal-contenido {
+	display: grid;
+	background-color: #fefefe;
+	border-radius: 0.4vw;
+
+}
+
+.modal-contenido .modal-cabecera .modal__descripcion {
+	padding: 1.5vw 1vw;
+	text-align: start;
+}
+
+.modal-consultar .modal-cuerpo .campo .campo-id {
+	display: flex;
+	justify-content: space-evenly;
+	align-items: center;
+}
+
+.campo__botones .fa-solid {
+	color: #131417;
+}
+
+.modal-cabecera {
+	text-align: center;
+}
+
+.modal__descripcion {
+	color: #4e4e4e;
+	font-size: 1.2vw;
+	padding: 0 2vw;
+}
+
+.combobox {
+	width: 20vw;
+	padding: 12px 20px;
+	margin: 8px 0;
+	box-sizing: border-box;
+}
+
+.modal-cuerpo {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	align-content: center;
+	padding: 0 3vw;
+	column-gap: 2vw;
+}
+
+/* The Close Button */
+.btn-cerrar-modal {
+	color: #aaa;
+	float: right;
+	font-size: 28px;
+	font-weight: bold;
+}
+
+.btn-cerrar-modal:hover,
+.btn-cerrar-modal:focus {
+	color: black;
+	text-decoration: none;
+	cursor: pointer;
+}
+
+
+.modal-pie {
+	display: flex;
+	align-items: center;
+}
+
+.modal-pie button {
+	margin-right: 3.1vw;
+	background-color: var(--anaranjado);
+	padding: 0.5vw 3vw;
+	border-radius: 0.5vw;
+	font-weight: bold;
+	cursor: pointer;
+}

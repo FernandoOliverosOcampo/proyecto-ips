@@ -1,0 +1,36 @@
+<p-dialog header="Registrarse" [(visible)]="registerDialogVisible" [modal]="true" [style]="{ width: '50vw' }" [draggable]="false" [resizable]="false">
+  <div class="p-fluid">
+    <div class="p-field">
+      <label for="newUsername">Usuario</label>
+      <input id="newUsername" type="text" pInputText [(ngModel)]="user" required>
+    </div>
+    <div class="p-field">
+      <label for="name">Nombre</label>
+      <input id="name" type="text" pInputText [(ngModel)]="name" required>
+    </div>
+    <div class="p-field">
+      <label for="surname">Apellido</label>
+      <input id="surname" type="text" pInputText [(ngModel)]="last_name" required>
+    </div>
+    <div class="p-field">
+      <label for="idCard">Cédula</label>
+      <input id="idCard" type="text" pInputText [(ngModel)]="id_patient" required>
+    </div>
+    <div class="p-field">
+      <label for="email">Correo electrónico</label>
+      <input id="email" type="email" pInputText [(ngModel)]="email_address" required>
+    </div>
+    <div class="p-field">
+      <label for="phone">Número de teléfono</label>
+      <input id="phone" type="tel" pInputText [(ngModel)]="phone_number" required>
+    </div>
+    <div class="p-field">
+      <label for="newPassword">Contraseña</label>
+      <input id="newPassword" type="password" pPassword [(ngModel)]="password" required>
+    </div>
+  </div>
+  <div class="p-dialog-footer">
+    <button pButton type="button" label="Cancelar" (click)="closeRegisterDialog()"></button>
+    <button pButton type="button" label="Registrarse" (click)="register()"></button>
+  </div>
+</p-dialog>
