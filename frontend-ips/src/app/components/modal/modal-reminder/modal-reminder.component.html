@@ -1,37 +1,46 @@
-<p-dialog header="Agregar recordatorio" [(visible)]="reminderDialogVisible" [modal]="true" [style]="{ 'width': '60vw', 'height': '80vh' }" [draggable]="false" [resizable]="false">
-
-<div id="targetModalAgregarRecordatorio" class="modal">
-    <!-- Modal content -->
-    <div class="modal-contenido p-fluid">
-        <div class="modal-cabecera">
-            <p class="modal__descripcion">Selecciona un recordatorio a agregar al calendario</p>
+<p-dialog header="Agregar recordatorio" [(visible)]="reminderDialogVisible" [modal]="true" [style]="{ width: '60vw', height: '80vh' }" [draggable]="false" [resizable]="false">
+    <div class="modal">
+      <div class="modal-content">
+        <div class="modal-header">
+          <p class="modal-description">Registra un medicamento que empezarás a tomar para obtener un recordatorio de cuándo tomarlo. Recuerda que en la opción de "Reportar" puedes enviarle este seguimiento al doctor para que esté enterado de tu tratamiento.</p>
         </div>
-
-        <div class="modal-cuerpo">
-
-            <div class="campo">
-                <div class="campo-titulo">
-                    <label for="name">Malestar/Enfermedad</label>
-                </div>
-                <div class="card flex justify-content-center">
-                    <p-dropdown [options]="diseases" [(ngModel)]="selectedDisease" optionLabel="disease"></p-dropdown>
-                </div>
+        <div class="modal-body">
+          <div class="field-group">
+            <div class="field">
+              <label for="malestar" class="field-title">Malestar/Enfermedad</label>
+              <div class="card">
+                <p-dropdown class="custom-dropdown" [options]="diseases" [(ngModel)]="selectedDisease" optionLabel="disease"></p-dropdown>
+              </div>
             </div>
-
-            <div class="campo">
-                <div class="campo-titulo">
-                    <label for="name">Redacta una breve descripción del reporte a enviar al doctor</label>
-                </div>
-                <div class="card flex justify-content-center">
-                    <textarea rows="5" cols="30" pInputTextarea [autoResize]="true"></textarea>
-                </div>
+            <div class="field">
+              <label for="medicamentos" class="field-title">Pastillas/Medicamentos</label>
+              <div class="card">
+                <p-dropdown class="custom-dropdown" [options]="medications" [(ngModel)]="selectedMedication" optionLabel="medication"></p-dropdown>
+              </div>
             </div>
-
+          </div>
+          <div class="field-group">
+            <div class="field">
+              <label for="fechaInicio" class="field-title">Fecha de Inicio</label>
+              <p-calendar [(ngModel)]="startDate" [showIcon]="true" appendTo="body"></p-calendar>
+            </div>
+            <div class="field">
+              <label for="" class="field-title">Categorías</label>
+              <div class="card checkbox-card">
+                <div *ngFor="let category of categories" class="checkbox-field">
+                  <p-checkbox name="group" [value]="category" [(ngModel)]="selectedCategories" [inputId]="category.key"></p-checkbox>
+                  <label [for]="category.key">{{ category.name }}</label>
+                </div>
+              </div>
+            </div>
+          </div>
+          <label for="" class="field-title">Redacta una breve descripción del reporte a enviar al doctor</label>
+          <div class="field-group description-field-group">
+            <textarea rows="5" cols="30" pInputTextarea [autoResize]="true"></textarea>
+          </div>
         </div>
-
-        <div class="modal-pie">
-            <button id="btnReportarDatosModal">Guardar</button>
-        </div>
+        <p-button label="Guardar" icon="pi pi-check" styleClass="p-button-success"></p-button>
+      </div>
     </div>
-</div>
-</p-dialog>
+  </p-dialog>
+

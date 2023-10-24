@@ -1,42 +1,24 @@
-<div class="hero">
-  <section class="pagina-principal">
-    <div class="contenedor">
-      <div class="info-usuario" id="infoUsuarioContenedor"></div>
-      <div class="calendario">
-        <header>
-          <p class="current-date"></p>
-          <div class="icons">
-            <span id="prev" class="material-symbols-rounded"><</span>
-            <span id="next" class="material-symbols-rounded">></span>
-          </div>
-        </header>
-        <div class="calendar">
-          <ul class="weeks">
-            <li>Dom</li>
-            <li>Lun</li>
-            <li>Mar</li>
-            <li>Mie</li>
-            <li>Jue</li>
-            <li>Vie</li>
-            <li>Sab</li>
-          </ul>
-          <ul class="days"></ul>
-        </div>
+<div class="main-container">
+  <section class="homepage">
+    <div class="content-container">
+      <div class="calendar-section">
+        <h2>Calendario</h2>
+        <p-calendar [(ngModel)]="date" [showIcon]="true"></p-calendar>
       </div>
-      <div class="recordatorios">
-        <div class="titulo">
-          <h1>Recordatorios</h1>
-        </div>
-        <div class="informacion" id="contenedorRecordatorios"></div>
-      </div>
-      <div class="botones">
-        <div class="boton-info">
-            <button pButton type="button" label="Agregar recordatorio" (click)="modalReminder.showReminderDialog()"></button>
-        </div>
 
-        <div class="boton-info">
-            <button pButton type="button" label="Eliminar recordatorio" (click)="modalDelete.showDeleteDialog()"></button>
-        </div>
+      <div class="reminder-section">
+        <h2>Recordatorios</h2>
+        <!-- Aquí irían los recordatorios -->
+      </div>
+    </div>
+
+    <div class="button-container">
+      <div class="button-info">
+          <button pButton type="button" label="Agregar" (click)="modalReminder.showReminderDialog()"></button>
+      </div>
+
+      <div class="button-info">
+          <button pButton type="button" label="Eliminar" (click)="modalDelete.showDeleteDialog()"></button>
       </div>
     </div>
   </section>

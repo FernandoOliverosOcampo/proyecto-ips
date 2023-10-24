@@ -1,0 +1,33 @@
+.main-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  
+    .homepage {
+      width: 80%;
+      max-width: 1200px;
+  
+      .content-container {
+        display: flex;
+        justify-content: space-between;
+  
+        .calendar-section,
+        .reminder-section {
+          width: 48%;
+        }
+      }
+  
+      .button-container {
+        display: flex;
+        justify-content: flex-end;
+        margin-top: 20px;
+        margin-right: 195px;
+  
+        .button-info {
+          margin-left: 100px;
+        }
+      }
+    }
+  }
+  

@@ -1,0 +1,30 @@
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    background-color: black;
+  }
+  
+  .nav-buttons {
+    display: flex;
+  
+    .nav-button {
+      margin-right: 20px;
+      padding: 10px;
+      background-color: yellow;
+      border: none;
+      cursor: pointer;
+      transition: background-color 0.5s ease;
+  
+      &:hover {
+        background-color: orange;
+      }
+    }
+  }
+  
+  .logo-container {
+    .logo {
+      height: 50px;
+    }
+  }
+  
