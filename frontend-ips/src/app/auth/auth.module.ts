@@ -8,6 +8,8 @@ import { DialogModule } from 'primeng/dialog';
 import { DropdownModule } from 'primeng/dropdown';
 import { InputTextareaModule } from 'primeng/inputtextarea';
 import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+
 
 // Otras importaciones específicas de Auth
 
@@ -24,7 +26,8 @@ import { FormsModule } from '@angular/forms';
     ButtonModule,
     DropdownModule,
     InputTextareaModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
   exports: [
     LoginComponent, // Si necesitas exportar algún componente

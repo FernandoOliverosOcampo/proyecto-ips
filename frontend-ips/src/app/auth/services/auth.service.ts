@@ -1,21 +1,17 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { config } from 'src/app/config/config';
+import { Observable } from 'rxjs';
+import { LoginResponse } from '../modal/modal-login/modal-login.component';
 
 @Injectable({
   providedIn: 'root'
 })
-export class ApiService {
-  private apiUrl = 'http://localhost:5000'; // La URL de tu API Flask
+export class AuthService {
 
   constructor(private http: HttpClient) { }
 
-  iniciarSesion(username: string, password: string) {
-    const datos_insertar = {
-      user: username,
-      password: password
-    };
-
-    return this.http.post(`${this.apiUrl}/login`, datos_insertar, config);
+  login(usuario: string, contrasena: string): Observable<LoginResponse> {
+    return this.http.post<LoginResponse>('http://localhost:5000/iniciar-sesion', { usuario, contrasena });
   }
+  
 }
